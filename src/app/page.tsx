@@ -1,7 +1,8 @@
 import { ColorSchemeDropdown } from "@/components/color-schemes-switcher";
 import { AppShell, AppShellHeader, AppShellMain, Group, Text, Title } from "@mantine/core";
-import vprojectzLogo from "@/assets/v-projectz-logo.svg";
+import vprojectzLogo from "@/assets/svgs/v-projectz-logo.svg";
 import Image from "next/image";
+import { DisplayLottie } from "@/components/display-lottie";
 
 // ========================================================================= //
 export default function RootPage() {
@@ -14,8 +15,14 @@ export default function RootPage() {
           <ColorSchemeDropdown />
         </Group>
       </AppShellHeader>
-      <AppShellMain>
-        <Text>Welcome to V-Projectz!</Text>
+      <AppShellMain className="text-center">
+        <Title>Welcome to V-Projectz!</Title>
+        <Text>{"This website is currently under heavy construction..."}</Text>
+        <DisplayLottie
+          src={"/lotties/site-under-construction.lottie"}
+          loop
+          autoplay
+        />
       </AppShellMain>
     </AppShell>
   );

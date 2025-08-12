@@ -1,13 +1,27 @@
 "use client";
 
 import { useMantineColorScheme, Menu, ActionIcon } from "@mantine/core";
-import { IconSun, IconMoon, IconBrightnessFilled } from "@tabler/icons-react";
-import { useState } from "react";
+import { IconSun, IconMoon, IconBrightnessFilled, IconQuestionMark } from "@tabler/icons-react";
+import { useEffect, useState } from "react";
 
 // ========================================================================= //
 export function ColorSchemeDropdown() {
   const { colorScheme, setColorScheme } = useMantineColorScheme();
   const [, setOpened] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true); // prevent SSR/CSR mismatch
+  }, []);
+
+  // If not mounted yet, render nothing (or a placeholder icon)
+  if (!mounted) {
+    return (
+      <ActionIcon disabled size="lg" variant="filled" color="gray" radius="xl">
+        <IconQuestionMark size={24} />
+      </ActionIcon>
+    );
+  }
 
   // Pick icon and color based on current theme
   const icon = {
