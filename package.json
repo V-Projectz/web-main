@@ -1,6 +1,6 @@
 {
-  "name": "next-app-mantine-tailwind-template",
-  "version": "0.1.0",
+  "name": "vprojectz-web-main",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

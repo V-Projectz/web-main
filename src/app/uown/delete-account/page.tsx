@@ -1,12 +1,12 @@
+import { MarkdownRenderer } from "@/components/markdown-renderer";
+import { Container, Stack, Title, Text, Divider } from "@mantine/core";
 import fs from "fs";
 import path from "path";
-import { Title, Text, Divider, Container, Stack } from "@mantine/core";
-import { MarkdownRenderer } from "@/components/markdown-renderer";
 
 // ========================================================================= //
-export default function UOwnPrivacyPolicyPage() {
+export default function UOwnDeleteAccountPage() {
   // This only runs on the server!
-  const filePath = path.join(process.cwd(), "public/md/uown-privacy-policy.md");
+  const filePath = path.join(process.cwd(), "public/md/uown-delete-account.md");
   const mdContent = fs.readFileSync(filePath, "utf-8");
   const stats = fs.statSync(filePath);
   const lastModified = stats.mtime.toLocaleDateString("en-US", {
@@ -18,7 +18,7 @@ export default function UOwnPrivacyPolicyPage() {
   return (
     <Container size="sm" py="md">
       <Stack gap="md">
-        <Title order={1} ta="center">U-Own Application Privacy Policy</Title>
+        <Title order={1} ta="center">Delete Your U-Own Account</Title>
         <Text c="dimmed" ta="center" size="sm" mb="lg">Last Updated: {lastModified}</Text>
         <Divider my="md" />
         <MarkdownRenderer content={mdContent} />
