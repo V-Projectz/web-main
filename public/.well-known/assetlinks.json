@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.vprojectz.uown",
+            "sha256_cert_fingerprints": [
+                "37:1F:31:B8:A4:8B:67:59:41:A2:25:77:5E:4D:C7:D2:1F:49:07:0B:A7:6B:BC:E0:B3:3E:7A:61:CC:EB:01:58"
+            ]
+        }
+    }
+]
