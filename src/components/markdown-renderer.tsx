@@ -1,6 +1,6 @@
 import React from "react";
 import ReactMarkdown, { Components } from "react-markdown";
-import { Title, Divider } from "@mantine/core";
+import { Title, Divider, Anchor } from "@mantine/core";
 
 // ========================================================================= //
 type MarkdownProps = {
@@ -17,6 +17,16 @@ export const MarkdownRenderer: React.FC<MarkdownProps> = ({ content, components 
         h2: ({ ...props }) => <Title order={2} {...props} />,
         h3: ({ ...props }) => <Title order={3} {...props} />,
         hr: ({ ...props }) => <Divider my="md" {...props} />,
+        a: ({ href, children, ref, key, ...props }) => ( // eslint-disable-line @typescript-eslint/no-unused-vars
+          <Anchor
+            href={href}
+            {...props}
+            variant="link"
+            underline="never"
+          >
+            {children}
+          </Anchor>
+        ),
         ...components, // Allow overriding or extending
       }}
     >
