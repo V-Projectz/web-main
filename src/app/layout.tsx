@@ -5,6 +5,7 @@ import "./globals.css";
 import Image from "next/image";
 import { ColorSchemeDropdown } from "@/components/color-schemes-switcher";
 import vprojectzLogo from "@/assets/svgs/v-projectz-logo.svg";
+import HashScroll from "@/components/hash-scroll";
 
 // ========================================================================= //
 export const metadata: Metadata = {
@@ -29,7 +30,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <ColorSchemeDropdown />
               </Group>
             </AppShellHeader>
-            <AppShellMain>{children}</AppShellMain>
+            <AppShellMain>
+              <HashScroll />
+              {children}
+            </AppShellMain>
           </AppShell>
         </MantineProvider>
       </body>
