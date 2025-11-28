@@ -1,6 +1,6 @@
 "use client";
 
-import { DotLottieReact, DotLottieReactProps } from '@lottiefiles/dotlottie-react';
+import { DotLottieReact, DotLottieReactProps } from "@lottiefiles/dotlottie-react";
 
 // ========================================================================= //
 type DisplayLottieProps = DotLottieReactProps
