@@ -1,8 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { PLAY_STORE_URL, APP_STORE_URL } from "../constants";
+import { isbot } from "isbot";
 
+///
 export async function GET(req: NextRequest) {
-  const ua = req.headers.get("user-agent") || "";
+  const ua = req.headers.get("user-agent") ?? "";
+
+  // Bot detection
+  if (isbot(ua)) {
+    return NextResponse.rewrite(new URL("/uown/download-link-preview", req.url));
+  }
 
   // Android
   if (/android/i.test(ua)) {
