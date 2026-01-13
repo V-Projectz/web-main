@@ -1,3 +1,7 @@
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
+import { isbot } from "isbot";
+import { PLAY_STORE_URL, APP_STORE_URL } from "../constants";
 import { Metadata } from "next";
 
 ///
@@ -28,6 +32,20 @@ export const metadata: Metadata = {
 }
 
 ///
-export default function DownloadLinkPreviewPage() {
-  return null; // Bots only
+export default async function DownloadPage() {
+  const ua = (await headers()).get("user-agent") ?? "";
+
+  // Bot detection
+  if (isbot(ua)) {
+    return null;
+  }
+
+  // Android
+  if (/android/i.test(ua)) redirect(PLAY_STORE_URL);
+
+  // iOS
+  if (/iPad|iPhone|iPod/i.test(ua)) redirect(APP_STORE_URL);
+
+  // Desktop → redirect to helper page (absolute URL required)
+  redirect("/uown#download");
 }
