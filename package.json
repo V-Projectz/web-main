@@ -12,8 +12,10 @@
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.14.4",
+    "@mantine/carousel": "^8.3.18",
     "@mantine/core": "^8.0.0",
     "@mantine/hooks": "^8.0.0",
+    "@revenuecat/purchases-js": "^1.48.1",
     "@tabler/icons-react": "^3.34.1",
     "isbot": "^5.1.32",
     "next": "15.4.10",

@@ -18,11 +18,17 @@ export default function UOwnPrivacyPolicyPage() {
   return (
     <Container size="sm" py="md">
       <Stack gap="md">
-        <Title order={1} ta="center">U-Own Application Privacy Policy</Title>
-        <Text c="dimmed" ta="center" size="sm" mb="lg">Last Updated: {lastModified}</Text>
+        <Title order={1} ta="center">
+          U-Own Application Privacy Policy
+        </Title>
+        <Text c="dimmed" ta="center" size="sm" mb="lg">
+          Last Updated: {lastModified}
+        </Text>
         <Divider my="md" />
         <MarkdownRenderer content={mdContent} />
-        <Text ta="center" size="sm" c="dimmed">© {new Date().getFullYear()} V-Projectz LLC. All rights reserved.</Text>
+        <Text ta="center" size="sm" c="dimmed">
+          © {new Date().getFullYear()} V-Projectz LLC. All rights reserved.
+        </Text>
       </Stack>
     </Container>
   );

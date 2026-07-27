@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: "Track debts, split bills, and manage shared expenses with U-Own.",
     images: ["https://vprojectz.com/uown/uown-og-image.png"],
   },
-}
+};
 
 ///
 export default async function DownloadPage() {
