@@ -5,20 +5,19 @@ import { alpha, AppShellHeader, Group, Title, useComputedColorScheme, useMantine
 import Image, { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 
-///
+/** */
 interface AppHeaderProps {
   logo?: string | StaticImageData;
   title: ReactNode;
 }
 
-///
+/** */
 export function AppHeader({ logo, title }: AppHeaderProps) {
   const theme = useMantineTheme();
   const colorScheme = useComputedColorScheme();
   const bg = colorScheme === "dark" ? alpha(theme.colors.dark[7], 0.65) : alpha(theme.white, 0.65);
   const border = colorScheme === "dark" ? alpha(theme.white, 0.08) : alpha(theme.black, 0.08);
-
-  ///
+  //
   return (
     <AppShellHeader
       bg={bg}

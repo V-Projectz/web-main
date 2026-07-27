@@ -1,10 +1,10 @@
 import { Assets } from "@/assets";
 import { AppHeader } from "@/components";
-import { Anchor, AppShell, AppShellFooter, AppShellMain, Badge, Group, Text, Title } from "@mantine/core";
+import { Anchor, AppShell, AppShellFooter, AppShellMain, Group, Text, Title } from "@mantine/core";
 import Image from "next/image";
 
-///
-export default function ZentrobizLayout({
+/** */
+export default async function ZentrobizLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -22,7 +22,6 @@ export default function ZentrobizLayout({
             <Title size={25} fw={700}>
               ZentroBiz
             </Title>
-            <Badge color="green">Beta</Badge>
           </Group>
         }
       />
