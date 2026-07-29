@@ -1,12 +1,11 @@
-import { MarkdownRenderer } from "@/components/markdown-renderer";
+import { MarkdownRenderer } from "@/components";
 import { Container, Divider, Stack, Text, Title } from "@mantine/core";
 import fs from "fs";
 import path from "path";
 
-// ========================================================================= //
-export default function UOwnTermOfServicePage() {
+export default function PrivacyPolicyPage() {
   // This only runs on the server!
-  const filePath = path.join(process.cwd(), "public/md/uown-term-of-service.md");
+  const filePath = path.join(process.cwd(), "public/md/zentrobiz-privacy-policy.md");
   const mdContent = fs.readFileSync(filePath, "utf-8");
   const stats = fs.statSync(filePath);
   const lastModified = stats.mtime.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
@@ -15,7 +14,7 @@ export default function UOwnTermOfServicePage() {
     <Container size="sm" py="md">
       <Stack gap="md">
         <Title order={1} ta="center">
-          U-Own Application Term of Service
+          ZentroBiz Application Privacy Policy
         </Title>
         <Text c="dimmed" ta="center" size="sm" mb="lg">
           Last Updated: {lastModified}

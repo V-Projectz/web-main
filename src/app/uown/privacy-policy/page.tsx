@@ -1,7 +1,7 @@
+import { MarkdownRenderer } from "@/components/markdown-renderer";
+import { Container, Divider, Stack, Text, Title } from "@mantine/core";
 import fs from "fs";
 import path from "path";
-import { Title, Text, Divider, Container, Stack } from "@mantine/core";
-import { MarkdownRenderer } from "@/components/markdown-renderer";
 
 // ========================================================================= //
 export default function UOwnPrivacyPolicyPage() {
@@ -9,11 +9,7 @@ export default function UOwnPrivacyPolicyPage() {
   const filePath = path.join(process.cwd(), "public/md/uown-privacy-policy.md");
   const mdContent = fs.readFileSync(filePath, "utf-8");
   const stats = fs.statSync(filePath);
-  const lastModified = stats.mtime.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const lastModified = stats.mtime.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
   ///
   return (
     <Container size="sm" py="md">
