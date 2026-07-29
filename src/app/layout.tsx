@@ -1,11 +1,10 @@
-import type { Metadata } from "next";
-import { AppShell, AppShellHeader, AppShellMain, ColorSchemeScript, Group, mantineHtmlProps, MantineProvider, Title } from "@mantine/core";
-import theme from "./theme";
-import "./globals.css";
-import Image from "next/image";
-import { ColorSchemeDropdown } from "@/components/color-schemes-switcher";
-import vprojectzLogo from "@/assets/svgs/v-projectz-logo.svg";
+import { Assets } from "@/assets";
+import { AppHeader } from "@/components";
 import HashScroll from "@/components/hash-scroll";
+import { AppShell, AppShellMain, ColorSchemeScript, mantineHtmlProps, MantineProvider } from "@mantine/core";
+import type { Metadata } from "next";
+import "./globals.css";
+import theme from "./theme";
 
 // ========================================================================= //
 export const metadata: Metadata = {
@@ -23,13 +22,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="antialiased">
         <MantineProvider defaultColorScheme="auto" theme={theme}>
           <AppShell header={{ height: 60 }} padding="md">
-            <AppShellHeader>
-              <Group className="h-full px-md">
-                <Image alt="logo" className="" src={vprojectzLogo} width={45} height={45} />
-                <Title className="grow" size={25} >V-Projectz</Title>
-                <ColorSchemeDropdown />
-              </Group>
-            </AppShellHeader>
+            <AppHeader logo={Assets.svgs.vprojectzLogo} title="V-Projectz" />
             <AppShellMain>
               <HashScroll />
               {children}
