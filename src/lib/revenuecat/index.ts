@@ -7,7 +7,7 @@ import { FREE_PLAN, Plan } from "./types";
 /** */
 export function createRevenueCatClient(appUserId: string) {
   return Purchases.configure({
-    apiKey: process.env.REVENUECAT_ZENTROBIZ_WEB_BILLING_API_KEY!,
+    apiKey: process.env.ZENTROBIZ_REVENUECAT_WEB_BILLING_API_KEY!,
     appUserId,
   });
 }
