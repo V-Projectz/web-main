@@ -1,2 +1,12 @@
 @import "tailwind-preset-mantine";
 @import "./theme.css";
+
+:root[data-mantine-color-scheme="light"] {
+  --app-header-bg: color-mix(in srgb, var(--mantine-color-light-4) 35%, transparent);
+  --app-header-shadow: 0 5px 15px color-mix(in srgb, var(--mantine-color-black) 12%, transparent);
+}
+
+:root[data-mantine-color-scheme="dark"] {
+  --app-header-bg: color-mix(in srgb, var(--mantine-color-dark-8) 35%, transparent);
+  --app-header-shadow: 0 5px 15px color-mix(in srgb, var(--mantine-color-black) 20%, transparent);
+}

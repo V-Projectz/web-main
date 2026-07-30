@@ -1,7 +1,4 @@
-import { Assets } from "@/assets";
-import { AppHeader } from "@/components";
-import HashScroll from "@/components/hash-scroll";
-import { AppShell, AppShellMain, ColorSchemeScript, mantineHtmlProps, MantineProvider } from "@mantine/core";
+import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from "@mantine/core";
 import type { Metadata } from "next";
 import "./globals.css";
 import theme from "./theme";
@@ -21,13 +18,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body className="antialiased">
         <MantineProvider defaultColorScheme="auto" theme={theme}>
-          <AppShell header={{ height: 60 }} padding="md">
-            <AppHeader logo={Assets.svgs.vprojectzLogo} title="V-Projectz" />
-            <AppShellMain>
-              <HashScroll />
-              {children}
-            </AppShellMain>
-          </AppShell>
+          {children}
         </MantineProvider>
       </body>
     </html>

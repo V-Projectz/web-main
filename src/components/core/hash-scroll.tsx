@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 
+/** */
 export default function HashScroll() {
   useEffect(() => {
     // When page loads with a hash
@@ -13,12 +14,9 @@ export default function HashScroll() {
         if (el) el.scrollIntoView({ behavior: "smooth" });
       }
     };
-
     scrollToHash();
-
     // Listen for hash changes (when clicking links)
     window.addEventListener("hashchange", scrollToHash);
-
     return () => {
       window.removeEventListener("hashchange", scrollToHash);
     };

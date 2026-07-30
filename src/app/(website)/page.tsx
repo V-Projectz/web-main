@@ -1,7 +1,7 @@
 import { Anchor, Card, Container, Divider, Stack, Text, Title } from "@mantine/core";
 
 // ========================================================================= //
-export default function RootPage() {
+export default function WebsitePage() {
   return (
     <Container size="md" py="xl">
       <Stack gap="xl" align="center" className="text-center">

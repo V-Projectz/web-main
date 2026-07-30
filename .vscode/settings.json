@@ -9,13 +9,6 @@
   },
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
-  "cssVariables.lookupFiles": [
-    "**/*.css",
-    "**/*.scss",
-    "**/*.sass",
-    "**/*.less",
-    "node_modules/@mantine/core/styles.layer.css"
-  ],
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "prettier.printWidth": 150

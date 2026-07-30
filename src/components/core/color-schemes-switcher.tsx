@@ -1,19 +1,19 @@
 "use client";
 
-import { useMantineColorScheme, Menu, ActionIcon } from "@mantine/core";
-import { IconSun, IconMoon, IconBrightnessFilled, IconQuestionMark } from "@tabler/icons-react";
+import { ActionIcon, Menu, useMantineColorScheme } from "@mantine/core";
+import { IconBrightnessFilled, IconMoon, IconQuestionMark, IconSun } from "@tabler/icons-react";
 import { useEffect, useState } from "react";
 
 // ========================================================================= //
+/** */
 export function ColorSchemeDropdown() {
   const { colorScheme, setColorScheme } = useMantineColorScheme();
   const [, setOpened] = useState(false);
   const [mounted, setMounted] = useState(false);
-
+  //
   useEffect(() => {
     setMounted(true); // prevent SSR/CSR mismatch
   }, []);
-
   // If not mounted yet, render nothing (or a placeholder icon)
   if (!mounted) {
     return (
@@ -22,7 +22,6 @@ export function ColorSchemeDropdown() {
       </ActionIcon>
     );
   }
-
   // Pick icon and color based on current theme
   const icon = {
     light: <IconSun size={24} />,
@@ -45,9 +44,15 @@ export function ColorSchemeDropdown() {
         </ActionIcon>
       </Menu.Target>
       <Menu.Dropdown>
-        <Menu.Item leftSection={<IconSun size={16} />} onClick={() => setColorScheme("light")}>Light</Menu.Item>
-        <Menu.Item leftSection={<IconMoon size={16} />} onClick={() => setColorScheme("dark")}>Dark</Menu.Item>
-        <Menu.Item leftSection={<IconBrightnessFilled size={16} />} onClick={() => setColorScheme("auto")}>Auto</Menu.Item>
+        <Menu.Item leftSection={<IconSun size={16} />} onClick={() => setColorScheme("light")}>
+          Light
+        </Menu.Item>
+        <Menu.Item leftSection={<IconMoon size={16} />} onClick={() => setColorScheme("dark")}>
+          Dark
+        </Menu.Item>
+        <Menu.Item leftSection={<IconBrightnessFilled size={16} />} onClick={() => setColorScheme("auto")}>
+          Auto
+        </Menu.Item>
       </Menu.Dropdown>
     </Menu>
   );

@@ -1,4 +1,4 @@
-import { MarkdownRenderer } from "@/components/markdown-renderer";
+import { MarkdownRenderer } from "@/components/core/markdown-renderer";
 import { Container, Divider, Stack, Text, Title } from "@mantine/core";
 import fs from "fs";
 import path from "path";

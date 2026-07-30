@@ -1,9 +1,9 @@
 /** */
 export const AppInfo = {
   companyName: "V-Projectz",
-  name: "U-Own",
-  packageName: "com.vprojectz.uown",
-  appStoreId: "6754340842",
+  name: "ZentroBiz",
+  packageName: "com.vprojectz.zentrobiz",
+  appStoreId: "6771093240",
   //
   get playStoreUrl() {
     return `https://play.google.com/store/apps/details?id=${this.packageName}`;

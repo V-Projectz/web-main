@@ -1,34 +1,35 @@
 "use client";
 
-import { ColorSchemeDropdown } from "@/components/color-schemes-switcher";
-import { alpha, AppShellHeader, Group, Title, useComputedColorScheme, useMantineTheme } from "@mantine/core";
+import { ColorSchemeDropdown } from "@/components";
+import { AppShellHeader, Group, Title } from "@mantine/core";
 import Image, { StaticImageData } from "next/image";
 import { ReactNode } from "react";
 
 /** */
 interface AppHeaderProps {
-  logo?: string | StaticImageData;
+  logo?: string | StaticImageData | ReactNode;
   title: ReactNode;
 }
 
 /** */
 export function AppHeader({ logo, title }: AppHeaderProps) {
-  const theme = useMantineTheme();
-  const colorScheme = useComputedColorScheme();
-  const bg = colorScheme === "dark" ? alpha(theme.colors.dark[7], 0.65) : alpha(theme.white, 0.65);
-  const border = colorScheme === "dark" ? alpha(theme.white, 0.08) : alpha(theme.black, 0.08);
   //
   return (
     <AppShellHeader
-      bg={bg}
+      withBorder={false}
       style={{
+        background: "var(--app-header-bg)",
         backdropFilter: "blur(20px) saturate(180%)",
         WebkitBackdropFilter: "blur(20px) saturate(180%)",
-        borderBottom: `1px solid ${border}`,
+        boxShadow: "var(--app-header-shadow)",
       }}
     >
       <Group className="h-full px-md">
-        {logo && <Image src={logo} alt="Logo" width={40} height={40} />}
+        {typeof logo === "string" || (typeof logo === "object" && logo !== null && "src" in logo) ? (
+          <Image src={logo} alt="Logo" width={40} height={40} />
+        ) : (
+          logo
+        )}
         <Title className="grow" size={25}>
           {title}
         </Title>

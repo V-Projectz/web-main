@@ -1,5 +1,5 @@
-import { MarkdownRenderer } from "@/components/markdown-renderer";
-import { Container, Stack, Title, Text, Divider } from "@mantine/core";
+import { MarkdownRenderer } from "@/components/core/markdown-renderer";
+import { Container, Divider, Stack, Text, Title } from "@mantine/core";
 import fs from "fs";
 import path from "path";
 
@@ -18,11 +18,17 @@ export default function UOwnDeleteAccountPage() {
   return (
     <Container size="sm" py="md">
       <Stack gap="md">
-        <Title order={1} ta="center">Delete Your U-Own Account</Title>
-        <Text c="dimmed" ta="center" size="sm" mb="lg">Last Updated: {lastModified}</Text>
+        <Title order={1} ta="center">
+          Delete Your U-Own Account
+        </Title>
+        <Text c="dimmed" ta="center" size="sm" mb="lg">
+          Last Updated: {lastModified}
+        </Text>
         <Divider my="md" />
         <MarkdownRenderer content={mdContent} />
-        <Text ta="center" size="sm" c="dimmed">© {new Date().getFullYear()} V-Projectz LLC. All rights reserved.</Text>
+        <Text ta="center" size="sm" c="dimmed">
+          © {new Date().getFullYear()} V-Projectz LLC. All rights reserved.
+        </Text>
       </Stack>
     </Container>
   );

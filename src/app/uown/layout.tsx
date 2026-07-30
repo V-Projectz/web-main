@@ -3,20 +3,20 @@ import { AppHeader, AppHeaderLogo } from "@/components";
 import { layout } from "@/constants";
 import { Anchor, AppShell, AppShellFooter, AppShellMain, Group, Text, Title } from "@mantine/core";
 import { Metadata } from "next";
-import { AppInfo } from "./constant";
+import { AppInfo } from "./constants";
 
 /** */
 export const metadata: Metadata = {
-  title: "V-Projectz/ZentroBiz",
+  title: "V-Projectz/U-Own",
   appLinks: {
     ios: { app_name: AppInfo.name, app_store_id: AppInfo.appStoreId, url: AppInfo.appStoreUrl },
     android: { app_name: AppInfo.name, package: AppInfo.packageName, url: AppInfo.playStoreUrl },
   },
-  description: "ZentroBiz application main page",
+  description: "U-Own application main page",
 };
 
 /** */
-export default async function ZentrobizLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function UOwnLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const [companyName, appName] = metadata.title?.toString().split("/") ?? [];
   //
   return (
@@ -28,7 +28,7 @@ export default async function ZentrobizLayout({ children }: Readonly<{ children:
             <Text c="dimmed" fw={300} className="text-3xl">
               /
             </Text>
-            <AppHeaderLogo href="/zentrobiz" src={Assets.svgs.zentroBizLogo} alt={appName} />
+            <AppHeaderLogo href="/uown" src={Assets.svgs.uownLogo} alt={appName} />
             <Title size={25} fw={700}>
               {appName}
             </Title>
@@ -50,10 +50,10 @@ export default async function ZentrobizLayout({ children }: Readonly<{ children:
           bg="light-dark(var(--mantine-color-gray-4), var(--mantine-color-dark-8))"
           className="fixed bottom-0 left-0 right-0 justify-center py-2 shadow-md"
         >
-          <Anchor href="/zentrobiz/term-of-service" underline="never">
+          <Anchor href="/uown/term-of-service" underline="never">
             Terms of Service
           </Anchor>
-          <Anchor href="/zentrobiz/privacy-policy" underline="never">
+          <Anchor href="/uown/privacy-policy" underline="never">
             Privacy Policy
           </Anchor>
         </Group>
