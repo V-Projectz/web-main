@@ -47,6 +47,7 @@ export default function PricingView({ user, plans, error }: ViewProps) {
           <Space h={10}></Space>
           {user && (
             <Text
+              ta="center"
               dangerouslySetInnerHTML={{
                 __html: `Welcome, <strong>${user.displayName}</strong>! Choose the plan that's right for you.`,
               }}

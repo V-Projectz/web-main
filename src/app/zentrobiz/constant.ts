@@ -4,6 +4,7 @@ export const AppInfo = {
   name: "ZentroBiz",
   packageName: "com.vprojectz.zentrobiz",
   appStoreId: "6771093240",
+  appDeepLink: "vprojectz://zentrobiz.app",
   //
   get playStoreUrl() {
     return `https://play.google.com/store/apps/details?id=${this.packageName}`;

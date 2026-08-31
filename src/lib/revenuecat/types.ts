@@ -33,6 +33,7 @@ export const BUSINESS_PLAN_META: Record<string, PlanMeta> = {
     popular: false,
     buttonText: "Get Started",
     buttonVariant: "light",
+    // Update feature if plan changes
     features: ["1 Business", "Basic reports", "1.5% Transaction fee"],
   },
   business_pro: {
@@ -41,6 +42,7 @@ export const BUSINESS_PLAN_META: Record<string, PlanMeta> = {
     popular: true,
     buttonText: "Upgrade",
     buttonVariant: "filled",
+    // Update feature if plan changes
     features: ["Max 3 Businesses", "Advanced reports", "0.6% Transaction fee"],
   },
   business_enterprise: {
@@ -49,6 +51,7 @@ export const BUSINESS_PLAN_META: Record<string, PlanMeta> = {
     popular: false,
     buttonText: "Upgrade",
     buttonVariant: "filled",
+    // Update feature if plan changes
     features: ["Unlimited Businesses", "Unlock all features", "Priority support", "0.1% Transaction fee"],
   },
 } as const;
