@@ -1,5 +1,6 @@
 google.com, pub-5600246857834291, DIRECT, f08c47fec0942fa0
 google.com, pub-9193020934966016, DIRECT, f08c47fec0942fa0
+facebook.com, 1266712591787401, DIRECT, c3e20eee3f780d68
 smartadserver.com, 4194-OB, RESELLER, 060d053dcf45cbf3
 smartadserver.com, 4194, RESELLER, 060d053dcf45cbf3
 sharethrough.com, 4194-OB, RESELLER, 060d053dcf45cbf3
